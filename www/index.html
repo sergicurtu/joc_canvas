@@ -35,6 +35,17 @@
     </head>
 	
     <body>
+    	
+		var canvas = FastCanvas.create(); // specific to FastCanvas
+		var context = canvas.getContext("2d");
+		var myImage = FastCanvas.createImage(); // specific to FastCanvas
+		myImage.onload = function(){
+		   context.translate(100, 100);
+		   context.rotate(Math.PI);
+		   context.drawImage(myImage, 0, 0);
+		   FastCanvas.render(); // specific to FastCanvas
+		}
+		myImage.src = "images/myImage.jpg";
 		
 		<!-- AQUÍ VA CODI A MOSTRAR PER PANTALLA EN CAS DE NO FER SERVIR JSVIEW
 			<div class="app">
