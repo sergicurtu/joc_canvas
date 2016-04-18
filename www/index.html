@@ -36,16 +36,28 @@
 	
     <body>
     	
-		var canvas = FastCanvas.create(); // specific to FastCanvas
-		var context = canvas.getContext("2d");
-		var myImage = FastCanvas.createImage(); // specific to FastCanvas
-		myImage.onload = function(){
-		   context.translate(100, 100);
-		   context.rotate(Math.PI);
-		   context.drawImage(myImage, 0, 0);
-		   FastCanvas.render(); // specific to FastCanvas
+		var context = canvas.getContext('2d', { fastcontext : true });
+		
+		var image, src = "img/myImage.png";
+		if (context.isFast) {
+		  image = context.preload(src, render, console.log);
+		} else {
+		  image = new Image();
+		  image.src = "graphics/image.jpg";
+		  image.onload = render;
+		  image.onerror = console.log;
 		}
-		myImage.src = "img/myImage.png";
+		
+		function render() {
+		  if (context.isFast) {
+		    context.clear();
+		  } else {
+		    context.clearRect(0, 0, width, height);
+		  }
+		  context.translate(100, 100);
+		  context.rotate(Math.PI);
+		  context.drawImage(image, 0, 0);
+		}
 		
 		<!-- AQUÍ VA CODI A MOSTRAR PER PANTALLA EN CAS DE NO FER SERVIR JSVIEW
 			<div class="app">
