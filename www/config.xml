@@ -2,18 +2,18 @@
     
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "cat.numancia.SistemaSolar"
-        versionCode = "28" 
-        version     = "1.0.28" >
+        id          = "cat.numancia.JocCanvas"
+        versionCode = "1" 
+        version     = "0.0.01" >
 	
 	<!-- versionCode is optional and Android only -->
 
 	<preference name="phonegap-version" value="cli-5.2.0" />
 
-    <name>El Sistema Solar</name>
+    <name>Canvas_Game</name>
 
    <description>
-       Aplicació phonegap del salumnes de 4t info Curs 2015 2016. El Sistema Solar.
+       Test per jocs canvas
     </description>
 
     <author href="https://numancia.cat/intranet" email="sergi.curtu@numancia.cat">
