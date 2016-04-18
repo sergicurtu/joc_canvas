@@ -64,6 +64,8 @@
 	<gap:plugin name="ionic-plugin-keyboard" source='npm' />
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
 	<gap:plugin name="com.adobe.plugins.gaplugin" /> 
+	
+	<plugin name="FastCanvas" value="com.adobe.plugins.FastCanvas"/>
 
 
 	<!-- ********************************************************************************** -->
