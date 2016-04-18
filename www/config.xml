@@ -65,8 +65,8 @@
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
 	<gap:plugin name="com.adobe.plugins.gaplugin" /> 
 	
-	<!-- FastCanvas -->
-	<gap:plugin name="com.adobe.plugins.FastCanvas" source='npm' />
+	<!-- FastCanvas NO FUNCIONA npm-->
+	<!-- <gap:plugin name="com.adobe.plugins.FastCanvas" source='npm' /> -->
 
 
 	<!-- ********************************************************************************** -->
