@@ -68,6 +68,9 @@
 	<!-- FastCanvas NO FUNCIONA npm-->
 	<!-- <gap:plugin name="com.adobe.plugins.FastCanvas" source='npm' /> -->
 
+	<!-- FastContext -->
+	<gap:plugin name="com.piqnt.fastcontext" source='npm' />
+
 
 	<!-- ********************************************************************************** -->
 	<!-- ********************** ICONS & SPLASH CONFIGURATION ****************************** -->
