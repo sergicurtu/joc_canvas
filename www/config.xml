@@ -69,7 +69,7 @@
 	<!-- <gap:plugin name="com.adobe.plugins.FastCanvas" source='npm' /> -->
 
 	<!-- FastContext -->
-	<gap:plugin name="com.piqnt.fastcontext.FastContextPlugin" source='npm' />
+	<!-- <gap:plugin name="com.piqnt.fastcontext.FastContextPlugin" source='npm' /> -->
 
 
 	<!-- ********************************************************************************** -->
