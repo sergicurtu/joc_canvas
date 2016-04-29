@@ -76,8 +76,13 @@ $(document).on('deviceready', function() {
 		};
 		img.src = 'img/myImage.png'; // Determinar origen
 		
-		animacio();
-      	  
+		for (i = 0; i < 5; i++) {
+			
+			pausecomp(200);
+			ctx.clearRect(posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola );
+			ctx.drawImage(img,posicio_x_bola+5,posicio_y_bola,mida_x_bola,mida_y_bola);
+			
+		}
            }
       }
       
@@ -97,11 +102,10 @@ $(document).on('deviceready', function() {
         ctx.stroke();
       }
       
-      function animacio(){
-      	ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
-      	posicio_x_bola += 10 ;
-      	setTimeout(animancio,25)
-      }	
+      function pausecomp(ms) {
+	   ms += new Date().getTime();
+	   while (new Date() < ms){}
+      } 
       
      // Que fem si en quedem sense internet ( pots mirar amb el mode avió )
 	document.addEventListener("offline", function() {
