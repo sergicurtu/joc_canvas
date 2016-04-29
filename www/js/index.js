@@ -24,8 +24,7 @@ $(document).on('deviceready', function() {
      alert(info_pantalla);
      
      draw();
-     
-     
+
      //--------------------------------------------------------------------------------------------------------------------------//     
  
      // FUNCIONS A EXECUTAR EN EL MOMENT DE SER CRIDADES 
@@ -51,7 +50,18 @@ $(document).on('deviceready', function() {
 		var alcada_rect = alcada_pantalla_CSS - 20 ;
 		
 		alert( "Dibuixaré un rectangle amb origen a (10,10) i d´amplada : " + amplada_rect + " i alçada : " + alcada_rect);
-		roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);	
+		roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);
+		
+		// Situem la imatge ( bola )
+		var img = new Image();   // Crear nova imatge
+		// centre pantalla ?
+		var centre_x = amplada_pantalla_CSS / 2 ;
+		var centre_y = alcada_pantalla_CSS / 2 ;
+		img.onload = function(){
+		    ctx.drawImage(img,centre_x,centre_y);
+		};
+		img.src = 'img/myImage.png'; // Determinar origen
+		
       	  
            }
       }
