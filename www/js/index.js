@@ -80,7 +80,9 @@ $(document).on('deviceready', function() {
 			
 			pausecomp(200);
 			ctx.clearRect(posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola );
+			alert("esborrada");
 			ctx.drawImage(img,posicio_x_bola+5,posicio_y_bola,mida_x_bola,mida_y_bola);
+			alert("dibuixada");
 			
 		}
            }
