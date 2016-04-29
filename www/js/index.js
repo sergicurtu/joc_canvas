@@ -76,7 +76,7 @@ $(document).on('deviceready', function() {
 		};
 		img.src = 'img/myImage.png'; // Determinar origen
 		
-		for (i = 0; i < 5; i++) {
+		for (i = 0; i < 20; i++) {
 			
 			pausecomp(200);
 			ctx.clearRect(posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola );
