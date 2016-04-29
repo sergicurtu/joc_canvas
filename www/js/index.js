@@ -57,8 +57,19 @@ $(document).on('deviceready', function() {
 		// centre pantalla ?
 		var centre_x = amplada_pantalla_CSS / 2 ;
 		var centre_y = alcada_pantalla_CSS / 2 ;
+		
+		// quina mida la bola ?
+		var mida_x_bola = 30 ;
+		var mida_y_bola = 30 ;
+		
+		// Quina posició la bola ? Temin present que la bola ocupa un espai 
+		var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
+		var posicio_y_bola = centre_x - ( mida_y_bola / 2 ) ;
+		
 		img.onload = function(){
-		    ctx.drawImage(img,centre_x,centre_y,30,30);
+		
+		    // hauria de ser de 30x30 (o el que sigui) i centrada a la pantalla		
+		    ctx.drawImage(img,centre_x,centre_y,posicio_x_bola,posicio_y_bola);
 		};
 		img.src = 'img/myImage.png'; // Determinar origen
 		
