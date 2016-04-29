@@ -26,14 +26,21 @@ $(document).on('deviceready', function() {
         if (canvas.getContext){
           var ctx = canvas.getContext('2d');
       
-      	  var amplada_rect = amplada_pantalla_CSS  - 20 ;
-      	  var alcada_rect = alcada_pantalla_CSS - 20 ;
+	// pinto rectangles més petits (tradicionals)
+      	context.beginPath();
+      	ctx.strokeRect(10,10,340,596); 	
+        ctx.strokeRect(10,10,100,100); 	 
+        ctx.strokeRect(10,10,200,200); 	 
+        context.closePath();
+       
+      
+	var amplada_rect = amplada_pantalla_CSS  - 20 ;
+	var alcada_rect = alcada_pantalla_CSS - 20 ;
+	
+	alert( "Dibuixaré un rectangle amb origen a (10,10) i d´amplada : " + amplada_rect + " i alçada : " + alcada_rect);
+	roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);	
       	  
-      	  alert( "Dibuixaré un rectangle amb origen a (10,10) i d´amplada : " + amplada_rect + " i alçada : " + alcada_rect);
       	  
-      	  roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);	
-      	  	
-          
         }
       }
       
