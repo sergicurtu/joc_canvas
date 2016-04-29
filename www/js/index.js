@@ -58,7 +58,7 @@ $(document).on('deviceready', function() {
 		var centre_x = amplada_pantalla_CSS / 2 ;
 		var centre_y = alcada_pantalla_CSS / 2 ;
 		img.onload = function(){
-		    ctx.drawImage(img,centre_x,centre_y);
+		    ctx.drawImage(img,centre_x,centre_y,30,30);
 		};
 		img.src = 'img/myImage.png'; // Determinar origen
 		
