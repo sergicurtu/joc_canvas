@@ -29,6 +29,8 @@ $(document).on('deviceready', function() {
       	  var amplada_rect = amplada_pantalla - 20 ;
       	  var alcada_rect = alcada_pantalla - 20 ;
       	  
+      	  alert( "Dibuixaré un rectangle amb origen a (10,10) i d´amplada : " + amplada_rect + " i alçada : " + alcada_rect);
+      	  
       	  roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);	
       	  	
           
