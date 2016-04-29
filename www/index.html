@@ -5,11 +5,7 @@
         
 		<!--Let browser know website is optimized for mobile-->
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>-->
-		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height" />
-		
-		<!--ARXIUS NECESSARIS per JSVIEW http://www.javascriptview.com/ -->
-		<!--CAL COMENTAR SI NO ES FA SERVIR JSVIEW -->
-		<!--<link rel="stylesheet" type="text/css" href="css/jsview.css">-->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height , user-scalable=no"/>
 		
 		<!--Import materialize.css-->
 		<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
@@ -22,14 +18,6 @@
 		
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		
-		
-		<!-- ARXIUS NECESSARIS PER mobileUI http://www.mobileui.org/innovaportal/v/223/2/innova.front/demo.html -->
-		<!--CAL COMENTAR SI NO ES FA SERVIR mobileUI -->
-		<!--
-				<link rel="stylesheet" href="mobileui/mui.min.css" type="text/css">
-				<link rel="stylesheet" href="custom/custom.css" type="text/css">
-		-->	
-		
         <title>A Canvas Game</title>
 	
     </head>
@@ -37,16 +25,9 @@
     <body>
     	
     	
-		<!-- AQUÍ VA CODI A MOSTRAR PER PANTALLA EN CAS DE NO FER SERVIR JSVIEW
-			<div class="app">
-				
-				<h3 style="color:red">Projecte INFO 4t</h3>
-				<h3>2015 2016</h3>
-				
-			</div>
-		-->
+		<!-- AQUÍ VA CODI A MOSTRAR PER PANTALLA -->
+        	<canvas id="canvas"></canvas>	
         
-		<canvas id="canvas"></canvas>	
         
         	<style>
         	
@@ -67,12 +48,9 @@
 		<!--	CORDOVA	-->
         	<script type="text/javascript" src="cordova.js"></script>
 		
-		<!--	JQUERY	-->
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
-		<!--AQUEST ESTÀ EN LOCAL i ES MÉS VELL QUE EL QUE CRIDO CARREGANT D'INTERNET -->
-		<!--
-			<script src="vendors/jquery.min.js" type="text/javascript"></script>  
-		-->
+		<!--	JQUERY	versió 2.2.3-->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		
 		
 		<!--	MATERIALIZE	Buscar a la web http://materializecss.com/  per aplicar efectes etc-->
 		<script type="text/javascript" src="js/materialize.js"></script>
@@ -84,27 +62,6 @@
 		<!-- aquest afegeixen utilitats com resposta ràpida al click i Notificacions tipus whatssapp però cal configurar -->
 		<script src="vendors/fastclick.min.js" type="text/javascript"></script>    	 	
 		<script type="text/javascript" src="PushNotification.js"></script>
-		
-		<!--ARXIUS NECESSARIS per JSVIEW -->
-		<!--CAL COMENTAR SI NO ES FA SERVIR JSVIEW -->
-		<!--
-		<script type="text/javascript" src="js/jsview.js"></script>
-		<script type="text/javascript" src="js/controllers.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
-		-->
-		
-		<!-- ARXIUS NECESSARIS PER mobileUI-->
-		<!--
-		<script src="vendors/jquery.animate-enhanced.js" type="text/javascript"></script>
-		<script src="vendors/jqwait/jquery.wait.min.js" type="text/javascript"></script>   
-		<script src="vendors/iscroll-min.js" type="text/javascript"></script>
-		-->
-		
-		<!--CAL COMENTAR SI NO ES FA SERVIR mobileUI -->
-		<!--
-				<script src="mobileui/mui.min.js" type="text/javascript"></script>
-				<script src="custom/custom.js" type="text/javascript"></script>
-		-->	
 		
     </body>
 </html>
