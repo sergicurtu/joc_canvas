@@ -12,9 +12,7 @@ $(document).on('deviceready', function() {
      var info_pantalla = "amplada_pantalla : " + amplada_pantalla + " --- alçada_pantalla : " + alcada_pantalla +  " --- amplada_pantalla_CSS : " + amplada_pantalla_CSS + " --- alçada_pantalla_CSS : " + alcada_pantalla_CSS ;
      alert(info_pantalla);
      
-     
-     
-      draw();
+     draw();
      
      
      //--------------------------------------------------------------------------------------------------------------------------//     
@@ -22,26 +20,28 @@ $(document).on('deviceready', function() {
      // FUNCIONS A EXECUTAR EN EL MOMENT DE SER CRIDADES 
      // COM A ---> nom_funcio();   s'executa function nom_funcio(){ ... codi ... } 
      function draw() {
+     	
         var canvas = document.getElementById('canvas');
-        if (canvas.getContext){
-          var ctx = canvas.getContext('2d');
-      
-	// pinto rectangles més petits (tradicionals)
-      	context.beginPath();
-      	ctx.strokeRect(10,10,340,596); 	
-        ctx.strokeRect(10,10,100,100); 	 
-        ctx.strokeRect(10,10,200,200); 	 
-        context.closePath();
-       
-      
-	var amplada_rect = amplada_pantalla_CSS  - 20 ;
-	var alcada_rect = alcada_pantalla_CSS - 20 ;
-	
-	alert( "Dibuixaré un rectangle amb origen a (10,10) i d´amplada : " + amplada_rect + " i alçada : " + alcada_rect);
-	roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);	
+           
+           if (canvas.getContext){
+        	
+	        var ctx = canvas.getContext('2d');
+	      
+		// pinto rectangles més petits (tradicionals)
+	      	ctx.beginPath();
+	      	ctx.strokeRect(10,10,340,596); 	
+	        ctx.strokeRect(10,10,100,100); 	 
+	        ctx.strokeRect(10,10,200,200); 	 
+	        ctx.closePath();
+	       
+	      
+		var amplada_rect = amplada_pantalla_CSS  - 20 ;
+		var alcada_rect = alcada_pantalla_CSS - 20 ;
+		
+		alert( "Dibuixaré un rectangle amb origen a (10,10) i d´amplada : " + amplada_rect + " i alçada : " + alcada_rect);
+		roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);	
       	  
-      	  
-        }
+           }
       }
       
       // Per dibuixar rectangles amb vores arrodonides
