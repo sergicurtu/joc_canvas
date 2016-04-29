@@ -26,8 +26,8 @@ $(document).on('deviceready', function() {
         if (canvas.getContext){
           var ctx = canvas.getContext('2d');
       
-      	  var amplada_rect = amplada_pantalla - 20 ;
-      	  var alcada_rect = alcada_pantalla - 20 ;
+      	  var amplada_rect = amplada_pantalla_CSS  - 20 ;
+      	  var alcada_rect = alcada_pantalla_CSS - 20 ;
       	  
       	  alert( "Dibuixaré un rectangle amb origen a (10,10) i d´amplada : " + amplada_rect + " i alçada : " + alcada_rect);
       	  
