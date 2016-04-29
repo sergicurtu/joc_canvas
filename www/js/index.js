@@ -9,6 +9,17 @@ $(document).on('deviceready', function() {
      var alcada_pantalla_CSS = window.innerHeight ;
      /////////////////////////////////////////////////////////
      
+     // REDIMENSIONEM EL CANVAS
+     var ctx = canvas.getContext('2d');
+     ctx.canvas.width  = window.innerWidth;
+     ctx.canvas.height = window.innerHeight;
+     
+     /*
+     	// ALTERNATIVA ----------------------------------------------------------------
+        if (canvas.width  < window.innerWidth)  { canvas.width  = window.innerWidth;  }
+        if (canvas.height < window.innerHeight) { canvas.height = window.innerHeight; }
+     */
+     
      var info_pantalla = "amplada_pantalla : " + amplada_pantalla + " --- alçada_pantalla : " + alcada_pantalla +  " --- amplada_pantalla_CSS : " + amplada_pantalla_CSS + " --- alçada_pantalla_CSS : " + alcada_pantalla_CSS ;
      alert(info_pantalla);
      
