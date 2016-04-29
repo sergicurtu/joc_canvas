@@ -1,9 +1,19 @@
 $(document).on('deviceready', function() {
 
      var canvas = document.getElementById('canvas');
-      
+     
+     // determinem amplada alçada DISPOSITIU ------------------
+     var amplada_pantalla = screen.width ;
+     var alcada_pantalla = screen.height ; 
+     var amplada_pantalla_CSS = window.innerWidth ; 
+     var alcada_pantalla_CSS = window.innerHeight ;
+     /////////////////////////////////////////////////////////
+     
       draw();
-      
+     
+     
+     //--------------------------------------------------------------------------------------------------------------------------//     
+ 
      // FUNCIONS A EXECUTAR EN EL MOMENT DE SER CRIDADES 
      // COM A ---> nom_funcio();   s'executa function nom_funcio(){ ... codi ... } 
      function draw() {
@@ -30,5 +40,22 @@ $(document).on('deviceready', function() {
         ctx.quadraticCurveTo(x,y,x,y+radius);
         ctx.stroke();
       }
+      
+      
+     // Que fem si en quedem sense internet ( pots mirar amb el mode avió )
+	document.addEventListener("online", function() {
+		
+		//somthing
+		alert("ara NO HI HA internet");
+		
+	}, false);
+		
+	// Que fem si el dispositiu es gira ?
+	$(window).resize(function() {
+		//somthing
+		alert("has girat el dispositiu");
+	});
+      
+      
       
 });
