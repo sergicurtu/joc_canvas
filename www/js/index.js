@@ -24,6 +24,9 @@ $(document).on('deviceready', function() {
      alert(info_pantalla);
      
      draw();
+ 
+         
+			
 
      //--------------------------------------------------------------------------------------------------------------------------//     
  
@@ -73,6 +76,7 @@ $(document).on('deviceready', function() {
 		};
 		img.src = 'img/myImage.png'; // Determinar origen
 		
+		animacio();
       	  
            }
       }
@@ -93,6 +97,11 @@ $(document).on('deviceready', function() {
         ctx.stroke();
       }
       
+      function animacio(){
+      	ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
+      	posicio_x_bola += 10 ;
+      	setTimeout(animancio,25)
+      }	
       
      // Que fem si en quedem sense internet ( pots mirar amb el mode avió )
 	document.addEventListener("offline", function() {
