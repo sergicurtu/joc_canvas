@@ -39,12 +39,13 @@ $(document).on('deviceready', function() {
 	        var ctx = canvas.getContext('2d');
 	      
 		// pinto rectangles més petits (tradicionals)
+		/*
 	      	ctx.beginPath();
 	      	ctx.strokeRect(10,10,340,596); 	
 	        ctx.strokeRect(10,10,100,100); 	 
 	        ctx.strokeRect(10,10,200,200); 	 
 	        ctx.closePath();
-	       
+	        */
 	      
 		var amplada_rect = amplada_pantalla_CSS  - 20 ;
 		var alcada_rect = alcada_pantalla_CSS - 20 ;
