@@ -9,6 +9,11 @@ $(document).on('deviceready', function() {
      var alcada_pantalla_CSS = window.innerHeight ;
      /////////////////////////////////////////////////////////
      
+     var info_pantalla = "amplada_pantalla : " + amplada_pantalla + " --- alçada_pantalla : " + alcada_pantalla +  " --- amplada_pantalla_CSS : " + amplada_pantalla_CSS + " --- alçada_pantalla_CSS : " + alcada_pantalla_CSS ;
+     alert(info_pantalla);
+     
+     
+     
       draw();
      
      
@@ -21,6 +26,11 @@ $(document).on('deviceready', function() {
         if (canvas.getContext){
           var ctx = canvas.getContext('2d');
       
+      	  var amplada_rect = amplada_pantalla - 20 ;
+      	  var alcada_rect = alcada_pantalla - 20 ;
+      	  
+      	  roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);	
+      	  	
           
         }
       }
@@ -43,7 +53,7 @@ $(document).on('deviceready', function() {
       
       
      // Que fem si en quedem sense internet ( pots mirar amb el mode avió )
-	document.addEventListener("online", function() {
+	document.addEventListener("offline", function() {
 		
 		//somthing
 		alert("ara NO HI HA internet");
