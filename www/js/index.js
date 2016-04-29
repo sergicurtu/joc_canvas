@@ -64,12 +64,12 @@ $(document).on('deviceready', function() {
 		
 		// Quina posició la bola ? Temin present que la bola ocupa un espai 
 		var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
-		var posicio_y_bola = centre_x - ( mida_y_bola / 2 ) ;
+		var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
 		
 		img.onload = function(){
 		
 		    // hauria de ser de 30x30 (o el que sigui) i centrada a la pantalla		
-		    ctx.drawImage(img,centre_x,centre_y,posicio_x_bola,posicio_y_bola);
+		    ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
 		};
 		img.src = 'img/myImage.png'; // Determinar origen
 		
