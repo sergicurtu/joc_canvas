@@ -124,15 +124,15 @@ $(document).on('deviceready', function() {
 	});
       
       // AQUESTA PART DETECTA EL TOUCH DE L'USUARI
-      document.addEventListener('touchstart', function() {
+      document.addEventListener('touchstart', function(event) {
       
-      	 alert("OLE");	
+      	 alert("funci´´ook");	
 	 for(var i = 0; i < event.touches.length; i++)
 	   {
 	        clickX[i] = event.touches[i].pageX;
 	        clickY[i] = event.touches[i].pageY;
 	    }
-	    
+	 alert("fin bucle. Nº de valors : " + i );	  
 	 alert("Has tocat a ( " + clickX[0] + " , " + clickY[0] + " )" );
       
       
