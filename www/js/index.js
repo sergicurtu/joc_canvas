@@ -124,7 +124,7 @@ $(document).on('deviceready', function() {
 	});
       
       // AQUESTA PART DETECTA EL TOUCH DE L'USUARI
-      document.addEventListener('touchstart', , function() {
+      document.addEventListener('touchstart', function() {
       
       	 alert("OLE");	
 	 for(var i = 0; i < event.touches.length; i++)
