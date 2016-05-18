@@ -126,7 +126,9 @@ $(document).on('deviceready', function() {
       // AQUESTA PART DETECTA EL TOUCH DE L'USUARI
       document.addEventListener('touchstart', function(event) {
       
-      	 alert("funci´´ook");	
+      	 alert("funci´´ook");
+      	 var clickX[];
+      	 var clickY[];
 	 for(var i = 0; i < event.touches.length; i++)
 	   {
 	        clickX[i] = event.touches[i].pageX;
