@@ -124,19 +124,28 @@ $(document).on('deviceready', function() {
 	});
       
       // AQUESTA PART DETECTA EL TOUCH DE L'USUARI
-      	document.addEventListener('touchstart', onDocumentTouchStart, false);
-	document.addEventListener('touchmove', onDocumentTouchMove, false);
-	
-	function onDocumentTouchStart(event)
-	{
-	    for(var i = 0; i < event.touches.length; i++)
-	    {
+      document.addEventListener('touchstart', , function() {
+      
+      	 alert("OLE");	
+	 for(var i = 0; i < event.touches.length; i++)
+	   {
 	        clickX[i] = event.touches[i].pageX;
 	        clickY[i] = event.touches[i].pageY;
 	    }
 	    
-	    alert("Has tocat a ( " + clickX[i] + " , " + clickY[i] + " )" );
-	}
+	 alert("Has tocat a ( " + clickX[0] + " , " + clickY[0] + " )" );
+      
+      
+      
+      
+      }
+      , false);
+
+
+      // touchmove
+      document.addEventListener('touchmove', onDocumentTouchMove, false);
+
+	
 	function onDocumentTouchMove(event)
 	{
 	    for(var i = 0; i < event.touches.length; i++)
