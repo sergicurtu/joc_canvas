@@ -127,15 +127,18 @@ $(document).on('deviceready', function() {
       document.addEventListener('touchstart', function(event) {
       
       	 alert("funciona");
-      	 var clickX;
-      	 var clickY;
+      	 
 	 for(var i = 0; i < event.touches.length; i++)
 	   {
 	        clickX[i] = event.touches[i].pageX;
 	        clickY[i] = event.touches[i].pageY;
+	        
+	        alert(" Dins BUCLE ( i = " + i + " ) : " +  clickX[i] + " -- " + clickY[i] );
+	        
 	    }
-	 alert("fin bucle. Nº de valors : " + i );	  
-	 alert("Has tocat a ( " + clickX[0] + " , " + clickY[0] + " )" );
+	    
+	 	  
+	 //alert("Has tocat a ( " + clickX[0] + " , " + clickY[0] + " )" );
       
       
       
