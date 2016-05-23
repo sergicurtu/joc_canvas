@@ -124,24 +124,13 @@ $(document).on('deviceready', function() {
 	});
       
       // AQUESTA PART DETECTA EL TOUCH DE L'USUARI
-      document.addEventListener('touchstart', function(event) {
+      document.addEventListener('touchstart', function(e) {
       
-      	 alert("funciona");
-      	 
-	 for(var i = 0; i < event.touches.length; i++)
-	   {
-	        clickX[i] = event.touches[i].pageX;
-	        clickY[i] = event.touches[i].pageY;
-	        
-	        alert(" Dins BUCLE ( i = " + i + " ) : " +  clickX[i] + " -- " + clickY[i] );
-	        
-	    }
-	    
-	 	  
-	 //alert("Has tocat a ( " + clickX[0] + " , " + clickY[0] + " )" );
-      
-      
-      
+      	var touchobj = e.changedTouches[0] ; // reference first touch point (ie: first finger)
+        startx = parseInt(touchobj.clientX) ; // get x position of touch point relative to left edge of browser
+        //statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px' ;
+        alert("ClientX : " + startx + "px");
+        e.preventDefault() ;
       
       }
       , false);
