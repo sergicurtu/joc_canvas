@@ -59,11 +59,11 @@ $(document).on('deviceready', function() {
 		roundedRect(ctx,10,10,amplada_rect,alcada_rect,10);
 		
 		// dibuixo el fons --> laberint_fons_1.png
-		var img = new Image();   
+		var img_fons = new Image();   
 		img.onload = function(){
-		    ctx.drawImage(img,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+		    ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		};
-		img.src = 'img/laberint_fons_1.png'; // Determinar origen
+		img_fons.src = 'img/laberint_fons_1.png'; // Determinar origen
 		
 		
 		// Situem la imatge ( bola )
@@ -155,9 +155,9 @@ $(document).on('deviceready', function() {
 	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);	
       	    
       	    // dibuixo el fons --> laberint_fons_1.png
-	    var img = new Image();   
-	    img.src = 'img/laberint_fons_1.png'; // Determinar origen
-	    ctx.drawImage(img,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+	    var img_fons = new Image();   
+	    img_fons.src = 'img/laberint_fons_1.png'; // Determinar origen
+	    ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
       	    
       	    var img = new Image();   // Crear nova imatge
 	    img.src = 'img/myImage.png'; // Determinar origen
@@ -191,9 +191,9 @@ $(document).on('deviceready', function() {
 	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);	
       	    
       	    // dibuixo el fons --> laberint_fons_1.png
-	    var img = new Image();   
-	    img.src = 'img/laberint_fons_1.png'; // Determinar origen
-	    ctx.drawImage(img,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+	    var img_fons = new Image();   
+	    img_fons.src = 'img/laberint_fons_1.png'; // Determinar origen
+	    ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		
       	    
       	    var img = new Image();   // Crear nova imatge
