@@ -118,7 +118,7 @@ $(document).on('deviceready', function() {
 	// Que fem si el dispositiu es gira ?
 	$(window).resize(function() {
 		//somthing
-		alert("has girat el dispositiu");
+		//alert("has girat el dispositiu");
 	});
       
       // AQUESTA PART DETECTA EL TOUCH DE L'USUARI
