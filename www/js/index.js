@@ -141,15 +141,14 @@ $(document).on('deviceready', function() {
       	    
       	    //alert("L´anterior estava a  : (" + window.darrera_posicio_x + "," + window.darrera_posicio_x +  ") i ara estarà a : (" + startx + "," + starty + ")");
       	    
-      	    //var canvas = document.getElementById('canvas');
-      	    //var ctx = canvas.getContext('2d');
+      	    
+	    // en primer lloc eliminem la esfera anterior	      	
+      	    ctx.fillStyle="#FFFFFF";
+	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);	
+      	    
       	    var img = new Image();   // Crear nova imatge
 	    img.src = 'img/myImage.png'; // Determinar origen
 	    ctx.drawImage(img,startx,starty,mida_x_bola,mida_y_bola);
-	    
-	    // ctx.fillStyle="#FF0000"; // VERMELL 
-	    ctx.fillStyle="#FFFFFF";
-	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);
 
 	    // NOVA POSICIÓ DE LA BOLA -------
 	    window.darrera_posicio_x = startx ;
@@ -173,13 +172,15 @@ $(document).on('deviceready', function() {
       	    var amplada_pantalla_CSS = window.innerWidth ; 	// 360px
 	    var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; // 36 ;  10% de l'amplada de la pantalla -> amplada_pantalla_CSS 
 	    var mida_y_bola = mida_x_bola ;  // 36 ;
+      	
+	    // en primer lloc eliminem la esfera anterior	      	
+      	    ctx.fillStyle="#FFFFFF";
+	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);	
       	    
       	    var img = new Image();   // Crear nova imatge
 	    img.src = 'img/myImage.png'; // Determinar origen
 	    ctx.drawImage(img,startx,starty,mida_x_bola,mida_y_bola);
 	
-	    ctx.fillStyle="#FFFFFF";
-	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);
 
 	    // NOVA POSICIÓ DE LA BOLA -------
 	    window.darrera_posicio_x = startx ;
