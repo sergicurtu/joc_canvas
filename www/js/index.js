@@ -137,6 +137,10 @@ $(document).on('deviceready', function() {
       
       	    // hauria de ser de 30x30 (o el que sigui) i centrada a la pantalla	
       	    alert ("ara dibuixem la esfera amb mides  : " + mida_x_bola );
+      	    
+      	    var canvas = document.getElementById('canvas');
+      	    var ctx = canvas.getContext('2d');
+      	    var img = new Image();   // Crear nova imatge
 	    img.src = 'img/myImage.png'; // Determinar origen
 	    ctx.drawImage(img,startx,starty,mida_x_bola,mida_y_bola);
 	    
