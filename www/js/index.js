@@ -162,17 +162,32 @@ $(document).on('deviceready', function() {
 
 
       // touchmove
-      document.addEventListener('touchmove', onDocumentTouchMove, false);
-
+      document.addEventListener('touchmove', function(e) {
 	
-	function onDocumentTouchMove(event)
-	{
-	    for(var i = 0; i < event.touches.length; i++)
-	    {
-	        clickX[i] = event.touches[i].pageX;
-	        clickY[i] = event.touches[i].pageY;
-	    }
-	}
+	var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
+        startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
+        starty = parseInt(touchobj.clientY) ; // la pos Y en ref. a la part superior
+        e.preventDefault() ;
+      
+      	    // quina mida la bola ?
+      	    var amplada_pantalla_CSS = window.innerWidth ; 	// 360px
+	    var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; // 36 ;  10% de l'amplada de la pantalla -> amplada_pantalla_CSS 
+	    var mida_y_bola = mida_x_bola ;  // 36 ;
+      	    
+      	    var img = new Image();   // Crear nova imatge
+	    img.src = 'img/myImage.png'; // Determinar origen
+	    ctx.drawImage(img,startx,starty,mida_x_bola,mida_y_bola);
+	
+	    ctx.fillStyle="#FFFFFF";
+	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);
+
+	    // NOVA POSICIÓ DE LA BOLA -------
+	    window.darrera_posicio_x = startx ;
+	    window.darrera_posicio_y = starty ;
+	
+	
+      });	
+
       
 });
 
