@@ -147,7 +147,8 @@ $(document).on('deviceready', function() {
 	    img.src = 'img/myImage.png'; // Determinar origen
 	    ctx.drawImage(img,startx,starty,mida_x_bola,mida_y_bola);
 	    
-	    ctx.fillStyle="#FF0000";
+	    // ctx.fillStyle="#FF0000"; // VERMELL 
+	    ctx.fillStyle="#FFFFFF";
 	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);
 
 	    // NOVA POSICIÓ DE LA BOLA -------
