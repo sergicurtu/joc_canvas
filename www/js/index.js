@@ -139,7 +139,7 @@ $(document).on('deviceready', function() {
 	    var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; // 36 ;  10% de l'amplada de la pantalla -> amplada_pantalla_CSS 
 	    var mida_y_bola = mida_x_bola ;  // 36 ;
       	    
-      	    alert("L´anterior estava a  : (" + window.darrera_posicio_x + "," + window.darrera_posicio_x +  ") i ara estarà a : (" + startx + "," + starty + ")");
+      	    //alert("L´anterior estava a  : (" + window.darrera_posicio_x + "," + window.darrera_posicio_x +  ") i ara estarà a : (" + startx + "," + starty + ")");
       	    
       	    //var canvas = document.getElementById('canvas');
       	    //var ctx = canvas.getContext('2d');
@@ -148,7 +148,7 @@ $(document).on('deviceready', function() {
 	    ctx.drawImage(img,startx,starty,mida_x_bola,mida_y_bola);
 	    
 	    ctx.fillStyle="#FF0000";
-	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_x, mida_x_bola, mida_y_bola);
+	    ctx.fillRect(window.darrera_posicio_x, window.darrera_posicio_y, mida_x_bola, mida_y_bola);
 
 	    // NOVA POSICIÓ DE LA BOLA -------
 	    window.darrera_posicio_x = startx ;
