@@ -135,8 +135,12 @@ $(document).on('deviceready', function() {
       
       	// dibuixem la esfera a x,y
       
-      	    // hauria de ser de 30x30 (o el que sigui) i centrada a la pantalla	
-      	    alert ("ara dibuixem la esfera amb mides  : " + mida_x_bola );
+      	    
+      	    // quina mida la bola ?
+      	    var amplada_pantalla_CSS = window.innerWidth ; 	// 360px
+	    var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; // 36 ;  10% de l'amplada de la pantalla -> amplada_pantalla_CSS 
+	    var mida_y_bola = mida_x_bola ;  // 36 ;
+      	    alert("ara dibuixem la esfera amb mides  : " + mida_x_bola );
       	    
       	    var canvas = document.getElementById('canvas');
       	    var ctx = canvas.getContext('2d');
