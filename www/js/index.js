@@ -60,7 +60,7 @@ $(document).on('deviceready', function() {
 		
 		// dibuixo el fons --> laberint_fons_1.png
 		var img_fons = new Image();   
-		img.onload = function(){
+		img_fons.onload = function(){
 		    ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		};
 		img_fons.src = 'img/laberint_fons_1.png'; // Determinar origen
