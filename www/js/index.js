@@ -79,12 +79,10 @@ $(document).on('deviceready', function() {
 		};
 		img.src = 'img/myImage.png'; // Determinar origen
 		
-		for (i = 0; i < 20; i++) {
-			
-			pausecomp(200);
-			ctx.clearRect(posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola );
-			ctx.drawImage(img,posicio_x_bola+5,posicio_y_bola,mida_x_bola,mida_y_bola);
-		}
+		window.darrera_posicio_x = posicio_x_bola ;
+		window.darrera_posicio_y = posicio_y_bola ;
+		
+		
            }
       }
       
@@ -140,14 +138,16 @@ $(document).on('deviceready', function() {
       	    var amplada_pantalla_CSS = window.innerWidth ; 	// 360px
 	    var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; // 36 ;  10% de l'amplada de la pantalla -> amplada_pantalla_CSS 
 	    var mida_y_bola = mida_x_bola ;  // 36 ;
-      	    alert("ara dibuixem la esfera amb mides  : " + mida_x_bola );
       	    
-      	    var canvas = document.getElementById('canvas');
-      	    var ctx = canvas.getContext('2d');
+      	    alert("L´anterior estava a  : " + window.darrera_posicio_x + " i ara estarà a : " + startx );
+      	    
+      	    //var canvas = document.getElementById('canvas');
+      	    //var ctx = canvas.getContext('2d');
       	    var img = new Image();   // Crear nova imatge
 	    img.src = 'img/myImage.png'; // Determinar origen
 	    ctx.drawImage(img,startx,starty,mida_x_bola,mida_y_bola);
 	    
+      	    		
       
       
       }
