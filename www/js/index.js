@@ -126,12 +126,21 @@ $(document).on('deviceready', function() {
       // AQUESTA PART DETECTA EL TOUCH DE L'USUARI
       document.addEventListener('touchstart', function(e) {
       
-      	var touchobj = e.changedTouches[0] ; // reference first touch point (ie: first finger)
-        startx = parseInt(touchobj.clientX) ; // get x position of touch point relative to left edge of browser
-        starty = parseInt(touchobj.clientY) ; // la pos Y
+      	var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
+        startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
+        starty = parseInt(touchobj.clientY) ; // la pos Y en ref. a la part superior
         //statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px' ;
         //alert("Has tocat el punt -coordenades- ( " + startx + "px , " + starty + "px )");
         e.preventDefault() ;
+      
+      	// dibuixem la esfera a x,y
+      
+      	    // hauria de ser de 30x30 (o el que sigui) i centrada a la pantalla	
+      	    alert ("ara dibuixem la esfera amb mides  : " + mida_x_bola );
+	    img.src = 'img/myImage.png'; // Determinar origen
+	    ctx.drawImage(img,startx,starty,mida_x_bola,mida_y_bola);
+	    
+      
       
       }
       , false);
