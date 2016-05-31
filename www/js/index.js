@@ -34,16 +34,20 @@ $(document).on('deviceready', function() {
 
 function draw(ctx,amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell) {
 	
+		alert("draw");
 		// dibuixo el fons --> laberint_fons_1.png
 		var img_fons = new Image();   
-		if ( nivell==1) {img_fons.src = 'img/laberint_fons_1.png';} ; // Determinar origen
+		if ( nivell==1 ) 
+		{
+		   img_fons.src = 'img/laberint_fons_1.png';
+		} 
 		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
-		
+		alert("dibuixat fons");
 		// dibuixo la bola
 		var img = new Image(); 
 		img.src = 'img/myImage.png';
 		ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
-		
+		alert("dibuixada bola");
 		
 		window.darrera_posicio_x = posicio_x_bola ;
 		window.darrera_posicio_y = posicio_y_bola ;
