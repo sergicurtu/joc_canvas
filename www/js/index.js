@@ -17,7 +17,9 @@ $(document).on('deviceready', function() {
 	var centre_x = amplada_pantalla_CSS / 2 ;
 	var centre_y = alcada_pantalla_CSS / 2 ;
 		
-	// Quina posició la bola ? Temin present que la bola ocupa un espai 
+	// Quina posició la bola ? Temin present que la bola ocupa un espai 	// quina mida la bola ?
+	var mida_x_bola = amplada_pantalla_CSS * ( 10 / 100 ) ; 
+	var mida_y_bola = mida_x_bola ;  // 36 ;
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
 
@@ -27,5 +29,3 @@ $(document).on('deviceready', function() {
 
       
 });
-
- 
