@@ -27,9 +27,7 @@ $(document).on('deviceready', function() {
 	ctx.font = "30px Arial";
 	ctx.fillText("Toca per començar",10,centre_y);
 	
-	// DIBUIXEM LA PANTALLA INICIAL & BOLA	
-	var nivell = 1 ;
-	draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell);
+	var nivell = 0 ;
  
 	document.addEventListener("offline", function() { 
 		// alert("ara NO HI HA internet");
@@ -38,6 +36,19 @@ $(document).on('deviceready', function() {
 	$(window).resize(function() {
 		//alert("has girat el dispositiu");
 	}, false); 
+	
+	document.addEventListener('touchstart', function(e) {
+	
+		if ( nivell == 0 ) {
+			// DIBUIXEM LA PANTALLA INICIAL & BOLA	--> el 1r nivell
+			var nivell = 1 ;
+			var posicio_x_bola = 80 ; // hauria de ser en % o proporcional a la pantalla per tablets etc
+			var posicio_y_bola = 40 ;
+			draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell);
+		}
+	
+		
+	});	
 	
 	document.addEventListener('touchmove', function(e) {
 	
