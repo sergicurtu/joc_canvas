@@ -27,7 +27,7 @@ $(document).on('deviceready', function() {
 	ctx.font = "30px Arial";
 	ctx.fillText("Toca per començar",10,centre_y);
 	
-	var nivell = 0 ;
+	window.nivell = 0 ;
  
 	document.addEventListener("offline", function() { 
 		// alert("ara NO HI HA internet");
@@ -39,11 +39,17 @@ $(document).on('deviceready', function() {
 	
 	document.addEventListener('touchstart', function(e) {
 	
-		if ( nivell == 0 ) {
+		if ( window.nivell == 0 ) {
+			
 			// DIBUIXEM LA PANTALLA INICIAL & BOLA	--> el 1r nivell
-			var nivell = 1 ;
+			window.nivell = 1 ;
+			var nivell = window.nivell ;
+			
 			var posicio_x_bola = 80 ; // hauria de ser en % o proporcional a la pantalla per tablets etc
 			var posicio_y_bola = 40 ;
+			
+			alert( " " + amplada_pantalla_CSS +   " " + alcada_pantalla_CSS +   " " + posicio_x_bola +   " " + posicio_y_bola +   " " + mida_x_bola +   " " + mida_y_bola +   " " + nivell   )
+			
 			draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell);
 		}
 	
@@ -75,7 +81,7 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		
 		// dibuixo el fons --> laberint_fons_1.png
 		var img_fons = new Image();   
-		if ( nivell==1 ) 
+		if ( window.nivell == 1 ) 
 		{
 		   img_fons.src = 'img/laberint_fons_1.png';
 		} 
@@ -89,8 +95,7 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		
 		window.darrera_posicio_x = posicio_x_bola ;
 		window.darrera_posicio_y = posicio_y_bola ;
-		window.nivell = nivell ;
-
+		
 }
       
 function pausecomp(ms) {
