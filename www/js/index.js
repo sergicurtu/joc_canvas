@@ -78,6 +78,8 @@ $(document).on('deviceready', function() {
 
 function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell) {
 	
+		alert("cridada la funció DRAW");
+	
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
 		
