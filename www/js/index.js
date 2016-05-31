@@ -55,8 +55,6 @@ $(document).on('deviceready', function() {
 
 function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell) {
 	
-		alert("draw");
-		
 		var canvas = document.getElementById('canvas');
 		var ctx = canvas.getContext('2d');
 		
@@ -67,14 +65,12 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		   img_fons.src = 'img/laberint_fons_1.png';
 		} 
 		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
-		alert("dibuixat fons");
 		
 		
 		// dibuixo la bola
 		var img = new Image(); 
 		img.src = 'img/myImage.png';
 		ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
-		alert("dibuixada bola");
 		
 		window.darrera_posicio_x = posicio_x_bola ;
 		window.darrera_posicio_y = posicio_y_bola ;
@@ -86,5 +82,7 @@ function pausecomp(ms) {
    ms += new Date().getTime();
    while (new Date() < ms){}
 } 
+
+
 
 
