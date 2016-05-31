@@ -23,6 +23,10 @@ $(document).on('deviceready', function() {
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
 
+	// inici
+	ctx.font = "30px Arial";
+	ctx.fillText("Toca per començar",10,centre_y);
+	
 	// DIBUIXEM LA PANTALLA INICIAL & BOLA	
 	var nivell = 1 ;
 	draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell);
