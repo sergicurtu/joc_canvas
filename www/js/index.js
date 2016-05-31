@@ -23,18 +23,43 @@ $(document).on('deviceready', function() {
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
 
+	// DIBUIXEM LA PANTALLA INICIAL & BOLA	
 	var nivell = 1 ;
-	
-	draw(ctx,amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell);
+	draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell);
  
+	document.addEventListener("offline", function() { 
+		// alert("ara NO HI HA internet");
+	}, false);
+ 
+	$(window).resize(function() {
+		//alert("has girat el dispositiu");
+	}, false); 
+	
+	document.addEventListener('touchmove', function(e) {
+	
+			var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
+			startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
+			starty = parseInt(touchobj.clientY) ; // la pos Y en ref. a la part superior
+			e.preventDefault() ;
+		  
+			var posicio_x_bola = startx ;
+			var posicio_y_bola = starty ;
+		  
+			var nivell = window.nivell ;
+			draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell);
 
+	  });
       
 });
 
 
-function draw(ctx,amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell) {
+function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell) {
 	
 		alert("draw");
+		
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+		
 		// dibuixo el fons --> laberint_fons_1.png
 		var img_fons = new Image();   
 		if ( nivell==1 ) 
@@ -43,6 +68,8 @@ function draw(ctx,amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posici
 		} 
 		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		alert("dibuixat fons");
+		
+		
 		// dibuixo la bola
 		var img = new Image(); 
 		img.src = 'img/myImage.png';
@@ -51,6 +78,7 @@ function draw(ctx,amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posici
 		
 		window.darrera_posicio_x = posicio_x_bola ;
 		window.darrera_posicio_y = posicio_y_bola ;
+		window.nivell = nivell ;
 
 }
       
@@ -58,6 +86,5 @@ function pausecomp(ms) {
    ms += new Date().getTime();
    while (new Date() < ms){}
 } 
-
 
 
