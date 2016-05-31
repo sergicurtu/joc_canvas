@@ -23,9 +23,38 @@ $(document).on('deviceready', function() {
 	var posicio_x_bola = centre_x - ( mida_x_bola / 2 ) ;
 	var posicio_y_bola = centre_y - ( mida_y_bola / 2 ) ;
 
-	alert ("posicio : " + posicio_x_bola + " " + posicio_y_bola ) ;
-    // draw(posicio_x_bola,posicio_y_bola);
+	draw(ctx,amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola);
  
 
       
 });
+
+
+function draw(ctx,amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola) {
+	
+		// dibuixo el fons --> laberint_fons_1.png
+		var img_fons = new Image();   
+		img_fons.onload = function(){
+			ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+		};
+		img_fons.src = 'img/laberint_fons_1.png'; // Determinar origen
+		
+
+		// dibuixo la bola
+		var img = new Image();   // Crear nova imatge
+		img.onload = function(){
+			ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
+		};
+		img.src = 'img/myImage.png'; // Determinar origen
+		
+		window.darrera_posicio_x = posicio_x_bola ;
+		window.darrera_posicio_y = posicio_y_bola ;
+
+}
+      
+function pausecomp(ms) {
+   ms += new Date().getTime();
+   while (new Date() < ms){}
+} 
+
+
