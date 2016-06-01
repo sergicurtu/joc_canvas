@@ -111,6 +111,17 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
     		
     		alert("color_pixel al voltant del lloc tocat abc+transp : " + color_pixel);
     		
+    		var suma = 0 ;
+    		for (i = 0; i < color_pixel.length; i++) { 
+    			
+    			var residu = i % 4 ;  // calcula el residu de l'operació 4/4=1 residu 0 !!!
+    			if ( residu == 0 ) { continue ; } // el 4t valor i múltiples els saltem
+    			suma = suma + color_pixel[i];
+    			
+    		}	
+    		
+    		alert("Suma de valors : " + suma) ;
+    		
     		// var cp_0 = color_pixel[0] ; var cp_1 = color_pixel[1] ; var cp_2 = color_pixel[2] ;
     		
     		// if ( hex != "#FFFFFF" ) { alert("piiippppp!!!! ") ;}
