@@ -102,25 +102,31 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		} 
 		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		
+		// LA BOLA - ESFERA - NAU .... 
+		var radi_bola = mida_x_bola / 2 ;
+		posicio_x_bola = posicio_x_bola - radi_bola ; // FEM QUE EL CENTRE SIGUI EL PUNT TOCAT 
+		posicio_y_bola = posicio_y_bola - radi_bola ; 
+		
 		
 		// OK !!! el FONS . ARA abans de dibuixar la bola MIRO SI... he tocat un pixel BLANC O NEGRE ?
 		var canvas_detectar = document.getElementById('canvas');
 		var c = canvas_detectar.getContext('2d');
-    		var color_pixel = c.getImageData(posicio_x_bola, posicio_y_bola, 10, 10).data; 
-    		// var hex = "#" + ("000000" + rgbToHex(color_pixel[0], color_pixel[1], color_pixel[2])).slice(-6);
-    		
-    		alert("color_pixel al voltant del lloc tocat abc+transp : " + color_pixel);
-    		
-    		var suma = 0 ;
-    		for (i = 0; i < 400; i++) { // bucle fins a 100 per 10x10px a mirar
-    			
-    			var residu = i % 3 ;  // calcula el residu de l'operació 3/3=1 residu 0 !!!
-    			
-    			// he de considerar el primer cas on el residu també val 0 ( per i == 0 )
-    			if ( residu !== 0 || i == 0 ) { suma = suma + color_pixel[i]; } // valors 0,1,2,[3],4,5,6,[7] ... 
-    		}	
-    		
-    		alert("Suma de valors : " + suma) ;
+    	
+		// DETERMINEM UNA SÈRIE DE PUNT DE LA CORDA D'AQUESTA CIRCUNFERÈNCIA
+		
+		color_pixel_sc = c.getImageData(posicio_x_bola+radi_bola, posicio_y_bola, 1, 1).data; 
+		color_pixel_ce = c.getImageData(posicio_x_bola, posicio_y_bola+radi_bola, 1, 1).data; 
+		color_pixel_cd = c.getImageData(posicio_x_bola+radi_bola+radi_bola, posicio_y_bola+radi_bola, 1, 1).data; 
+		color_pixel_ic = c.getImageData(posicio_x_bola, posicio_y_bola+radi_bola+radi_bola, 1, 1).data; 
+		
+    	var suma = 0 ;
+		
+		suma = suma + color_pixel_sc[0] + color_pixel_sc[1] + color_pixel_sc[2] ;
+		suma = suma + color_pixel_cd[0] + color_pixel_cd[1] + color_pixel_cd[2] ;
+		suma = suma + color_pixel_cd[0] + color_pixel_cd[1] + color_pixel_cd[2] ;
+		suma = suma + color_pixel_ic[0] + color_pixel_ic[1] + color_pixel_ic[2] ;
+    	
+		alert("Suma de valors : " + suma) ;
     		
     		// if ( suma >  ) { alert("piiippppp!!!! ") ;}
 		
@@ -161,5 +167,3 @@ function rgbToHex(r, g, b) {
         throw "Invalid color component";
     return ((r << 16) | (g << 8) | b).toString(16);
 }
-
-
