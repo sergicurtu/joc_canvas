@@ -48,7 +48,7 @@ $(document).on('deviceready', function() {
 			var nivell = window.nivell ;
 			
 			var posicio_x_bola = 80 ; // hauria de ser en % o proporcional a la pantalla per tablets etc
-			var posicio_y_bola = 40 ;
+			var posicio_y_bola = 60 ;
 			
 			//alert( " " + amplada_pantalla_CSS +   " " + alcada_pantalla_CSS +   " " + posicio_x_bola +   " " + posicio_y_bola +   " " + mida_x_bola +   " " + mida_y_bola +   " " + nivell   )
 			
