@@ -119,17 +119,17 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		color_pixel_cd = c.getImageData(posicio_x_bola+radi_bola+radi_bola, posicio_y_bola+radi_bola, 1, 1).data; 
 		color_pixel_ic = c.getImageData(posicio_x_bola, posicio_y_bola+radi_bola+radi_bola, 1, 1).data; 
 		
-    	var suma = 0 ;
+    		var suma = 0 ;
 		
 		suma = suma + color_pixel_sc[0] + color_pixel_sc[1] + color_pixel_sc[2] ;
 		suma = suma + color_pixel_ce[0] + color_pixel_ce[1] + color_pixel_ce[2] ;
 		suma = suma + color_pixel_cd[0] + color_pixel_cd[1] + color_pixel_cd[2] ;
 		suma = suma + color_pixel_ic[0] + color_pixel_ic[1] + color_pixel_ic[2] ;
     	
-		alert("Suma de valors : " + suma) ;
+		//alert("Suma de valors : " + suma) ;
     	
 		// cas 4 element ( (255*3) * 4 = 3060 blanc   fins a 0 en negre)	
-    	if ( suma < 3060  ) 
+    		if ( suma < 3060  ) 
 		{ 
 			//PlaySound("vora_tocada"); 
 			beep_vora();
