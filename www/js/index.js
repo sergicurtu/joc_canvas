@@ -103,6 +103,21 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		
 		
+		// OK !!! el FONS . ARA abans de dibuixar la bola MIRO SI... he tocat un pixel BLANC O NEGRE ?
+		var canvas_detectar = document.getElementById('canvas');
+		var c = canvas_detectar.getContext('2d');
+    		var color_pixel = c.getImageData(posicio_x_bola, posicio_y_bola, 10, 10).data; 
+    		// var hex = "#" + ("000000" + rgbToHex(color_pixel[0], color_pixel[1], color_pixel[2])).slice(-6);
+    		
+    		alert("color_pixel: " + color_pixel);
+    		
+    		var cp_0 = color_pixel[0] ; var cp_1 = color_pixel[1] ; 	var cp_2 = color_pixel[2] ;
+    		
+    		if ( hex != "#FFFFFF" ) { alert("piiippppp!!!! ") ;}
+		
+		
+		
+		
 		// dibuixo la bola
 		var img = new Image(); 
 		img.src = 'img/myImage.png';
@@ -111,19 +126,7 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		window.darrera_posicio_x = posicio_x_bola ;
 		window.darrera_posicio_y = posicio_y_bola ;
 		
-		// OK !!! he dibuixat la bola . ARA ... he tocat un pixel BLANC O NEGRE ?
-		var canvas_detectar = document.getElementById('canvas');
-		var c = canvas_detectar.getContext('2d');
-    		var color_pixel = c.getImageData(posicio_x_bola, posicio_y_bola, mida_x_bola, mida_y_bola).data; 
-    		// var hex = "#" + ("000000" + rgbToHex(color_pixel[0], color_pixel[1], color_pixel[2])).slice(-6);
-    		
-    		alert("color_pixel: " + color_pixel);
-    		
-    		var cp_0 = color_pixel[0] ;
-    		var cp_1 = color_pixel[1] ;
-    		var cp_2 = color_pixel[2] ;
-    		
-    		if ( hex != "#FFFFFF" ) { alert("piiippppp!!!! ") ;}
+		
 		
 		
 		
