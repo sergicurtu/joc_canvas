@@ -116,6 +116,8 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
     		var color_pixel = ctx.getImageData(posicio_x_bola, posicio_y_bola, 1, 1).data; 
     		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
     		
+    		alert("Has tocat"+hex);
+    		
     		if ( hex !== "#FFFFFF" ) { alert("piiippppp!!!! ") ;}
 		
 		
@@ -127,6 +129,22 @@ function pausecomp(ms) {
    while (new Date() < ms){}
 } 
 
+function findPos(obj) {
+    var curleft = 0, curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+        return { x: curleft, y: curtop };
+    }
+    return undefined;
+}
 
+function rgbToHex(r, g, b) {
+    if (r > 255 || g > 255 || b > 255)
+        throw "Invalid color component";
+    return ((r << 16) | (g << 8) | b).toString(16);
+}
 
 
