@@ -132,10 +132,10 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
     		if ( suma < 3060  ) 
 		{ 
 			//PlaySound("vora_tocada"); 
-			beep_vora(); // tocarà un audio codificat en base64
-			
-			setTimeout(function(){ },2000);
-			
+			/* EL SO PROVOCA DELAY !!	
+				beep_vora(); // tocarà un audio codificat en base64
+				setTimeout(function(){ },2000);
+			*/
 			// tornem la bola a l'origen segons el nivell
 			if ( window.nivell == 1) 
 			{	
