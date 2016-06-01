@@ -115,8 +115,8 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		var canvas_detectar = document.getElementById('canvas');
 		var c = canvas_detectar.getContext('2d');
     		var color_pixel = c.getImageData(posicio_x_bola, posicio_y_bola, 1, 1).data; 
-    		alert("Color_Pixel : " + hex);
-    		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+    		alert("Color_Pixel : " + color_pixel);
+    		var hex = "#" + ("000000" + rgbToHex(color_pixel[0], color_pixel[1], color_pixel[2])).slice(-6);
     		alert("Has tocat :"+hex);
     		
     		
