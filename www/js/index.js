@@ -39,7 +39,7 @@ $(document).on('deviceready', function() {
 	
 	document.addEventListener('touchstart', function(e) {
 	
-		alert("TOCAT -> nivell = " + window.nivell) ;
+		//alert("TOCAT -> nivell = " + window.nivell) ;
 	
 		if ( window.nivell == 0 ) {
 			
