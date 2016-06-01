@@ -114,7 +114,9 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
     		var suma = 0 ;
     		for (i = 0; i < 400; i++) { // bucle fins a 100 per 10x10px a mirar
     			
-    			var residu = i % 3 ;  // calcula el residu de l'operació 4/4=1 residu 0 !!!
+    			var residu = i % 3 ;  // calcula el residu de l'operació 3/3=1 residu 0 !!!
+    			
+    			// he de considerar el primer cas on el residu també val 0 ( per i == 0 )
     			if ( residu !== 0 || i == 0 ) { suma = suma + color_pixel[i]; } // valors 0,1,2,[3],4,5,6,[7] ... 
     		}	
     		
