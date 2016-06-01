@@ -112,11 +112,13 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		window.darrera_posicio_y = posicio_y_bola ;
 		
 		// OK !!! he dibuixat la bola . ARA ... he tocat un pixel BLANC O NEGRE ?
-		//var c = this.getContext('2d');
-    		var color_pixel = ctx.getImageData(posicio_x_bola, posicio_y_bola, 1, 1).data; 
+		var canvas_detectar = document.getElementById('canvas');
+		var c = canvas_detectar.getContext('2d');
+    		var color_pixel = c.getImageData(posicio_x_bola, posicio_y_bola, 1, 1).data; 
+    		alert("Color_Pixel : " + hex);
     		var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
+    		alert("Has tocat :"+hex);
     		
-    		alert("Has tocat"+hex);
     		
     		if ( hex !== "#FFFFFF" ) { alert("piiippppp!!!! ") ;}
 		
