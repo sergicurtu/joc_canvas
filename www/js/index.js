@@ -109,11 +109,11 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
     		var color_pixel = c.getImageData(posicio_x_bola, posicio_y_bola, 10, 10).data; 
     		// var hex = "#" + ("000000" + rgbToHex(color_pixel[0], color_pixel[1], color_pixel[2])).slice(-6);
     		
-    		alert("color_pixel: " + color_pixel);
+    		alert("color_pixel al voltant del lloc tocat abc+transp : " + color_pixel);
     		
-    		var cp_0 = color_pixel[0] ; var cp_1 = color_pixel[1] ; 	var cp_2 = color_pixel[2] ;
+    		// var cp_0 = color_pixel[0] ; var cp_1 = color_pixel[1] ; var cp_2 = color_pixel[2] ;
     		
-    		if ( hex != "#FFFFFF" ) { alert("piiippppp!!!! ") ;}
+    		// if ( hex != "#FFFFFF" ) { alert("piiippppp!!!! ") ;}
 		
 		
 		
