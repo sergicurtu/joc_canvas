@@ -50,9 +50,20 @@ $(document).on('deviceready', function() {
 			var posicio_x_bola = 80 ; // hauria de ser en % o proporcional a la pantalla per tablets etc
 			var posicio_y_bola = 40 ;
 			
-			alert( " " + amplada_pantalla_CSS +   " " + alcada_pantalla_CSS +   " " + posicio_x_bola +   " " + posicio_y_bola +   " " + mida_x_bola +   " " + mida_y_bola +   " " + nivell   )
+			//alert( " " + amplada_pantalla_CSS +   " " + alcada_pantalla_CSS +   " " + posicio_x_bola +   " " + posicio_y_bola +   " " + mida_x_bola +   " " + mida_y_bola +   " " + nivell   )
 			
-			draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola,nivell);
+			var img_fons = new Image();   
+			img_fons.src = 'img/laberint_fons_1.png'; // Determinar origen
+			img_fons.onload = function(){
+		    		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+			};
+			
+			var img = new Image();
+			img.onload = function(){
+			  ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
+			};
+			img.src = 'img/myImage.png'; // Determinar origen
+			
 		}
 	
 		
