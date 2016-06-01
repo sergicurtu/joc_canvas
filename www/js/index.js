@@ -112,17 +112,15 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
     		alert("color_pixel al voltant del lloc tocat abc+transp : " + color_pixel);
     		
     		var suma = 0 ;
-    		for (i = 0; i < 100; i++) { // bucle fins a 100 per 10x10px a mirar
+    		for (i = 0; i < 400; i++) { // bucle fins a 100 per 10x10px a mirar
     			
     			var residu = i % 4 ;  // calcula el residu de l'operació 4/4=1 residu 0 !!!
     			if ( residu !== 0 ) { suma = suma + color_pixel[i]; } // valors 1,2,3 ... 5,6,7 ... 
-    			
-    			
     		}	
     		
     		alert("Suma de valors : " + suma) ;
     		
-    		// if ( hex != "#FFFFFF" ) { alert("piiippppp!!!! ") ;}
+    		// if ( suma >  ) { alert("piiippppp!!!! ") ;}
 		
 		
 		// dibuixo la bola
