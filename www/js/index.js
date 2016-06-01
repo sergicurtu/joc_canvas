@@ -137,6 +137,7 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 				setTimeout(function(){ },2000);
 			*/
 			// tornem la bola a l'origen segons el nivell
+			// SERIA MILLOR FER UNA PAUSA X OBLIGAR A AIXECAR EL DIT I NO FER TRAMPES !!!
 			if ( window.nivell == 1) 
 			{	
 				var posicio_x_bola = 80 ; 
