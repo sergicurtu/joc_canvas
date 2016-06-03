@@ -3,8 +3,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "cat.numancia.JocCanvas"
-        versionCode = "201" 
-        version     = "0.2.01" >
+        versionCode = "205" 
+        version     = "0.2.05" >
 	
 	<!-- versionCode is optional and Android only -->
 
