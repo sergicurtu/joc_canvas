@@ -147,6 +147,14 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 			
 		}
 		
+		if ( suma == 2550 || suma == 1530 || suma == 1020 ) // 1 , 3 o 4 costats sobre blau
+		{
+		
+			window.nivell = window.nivell + 1 ; // pex 1 -> 2	
+			alert("HO HAS ACONSEGUIT !!!");
+			return ; // JA NO DIBUIXA LA BOLA
+			
+		}
 		
 		// dibuixo la bola
 		var img = new Image(); 
