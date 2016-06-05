@@ -28,7 +28,9 @@ $(document).on('deviceready', function() {
 	ctx.fillText("Toca per començar",10,centre_y);
 	
 	window.nivell = 0 ;
- 
+ 	window.nou_nivell = 1 ; // això permet acceptar un TAP ( TOC )
+ 	
+ 	
 	document.addEventListener("offline", function() { 
 		// alert("ara NO HI HA internet");
 	}, false);
@@ -40,6 +42,8 @@ $(document).on('deviceready', function() {
 	document.addEventListener('touchstart', function(e) {
 	
 		//alert("TOCAT -> nivell = " + window.nivell) ;
+		
+		if ( window.nou_nivell == 0) { return ; } // tan sols accepta TAPS si s'ha acabat el nivell
 	
 		if ( window.nivell == 0 ) {
 			
@@ -64,12 +68,42 @@ $(document).on('deviceready', function() {
 			};
 			img.src = 'img/esfera.png'; // Determinar origen
 			
+			window.nou_nivell = 0 ; // permetem arrossegar
+			
+		}
+		
+		if ( window.nivell == 1 ) {
+			
+			// DIBUIXEM LA PANTALLA INICIAL & BOLA	--> el 2n nivell
+			var nivell = window.nivell ;
+			
+			var posicio_x_bola = 80 ; // hauria de ser en % o proporcional a la pantalla per tablets etc
+			var posicio_y_bola = 60 ;
+			
+			//alert( " " + amplada_pantalla_CSS +   " " + alcada_pantalla_CSS +   " " + posicio_x_bola +   " " + posicio_y_bola +   " " + mida_x_bola +   " " + mida_y_bola +   " " + nivell   )
+			
+			var img_fons = new Image();   
+			img_fons.src = 'img/laberint_fons_1.png'; // Determinar origen
+			img_fons.onload = function(){
+		    		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+			};
+			
+			var img = new Image();
+			img.onload = function(){
+			  ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
+			};
+			img.src = 'img/esfera.png'; // Determinar origen
+			
+			window.nou_nivell = 0 ; // permetem arrossegar
+			
 		}
 	
 		
 	});	
 	
 	document.addEventListener('touchmove', function(e) {
+	
+			if ( window.nou_nivell == 1) { return ; } // mentre aquesta variable sigui 1 NO SEGEUIXO ACCEPTANT QUE EL DIT SEGUEIXI ARROSSEGANT-SE
 	
 			var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
 			startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
@@ -100,6 +134,12 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		{
 		   img_fons.src = 'img/laberint_fons_1.png';
 		} 
+		
+		if ( window.nivell == 2 ) 
+		{
+		   img_fons.src = 'img/laberint_fons_2.png';
+		} 
+		
 		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		
 		// LA BOLA - ESFERA - NAU .... 
@@ -144,14 +184,27 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 				var posicio_y_bola = 60 ;
 			}
 			
+			if ( window.nivell == 2) 
+			{	
+				var posicio_x_bola = 80 ;  // ??
+				var posicio_y_bola = 60 ;
+			}
+			
 			
 		}
 		
-		if ( suma == 2550 || suma == 1530 || suma == 1020 ) // 1 , 3 o 4 costats sobre blau
+		// 357 + 765*3  357*2+765*2  357*3+765*1
+		if ( suma == 2652 || suma == 2244 || suma == 1836 ) // 1 , 3 o 4 costats sobre blau (51 51 255 = 357 + 765 per cada blanc)
 		{
 		
 			window.nivell = window.nivell + 1 ; // pex 1 -> 2	
 			alert("HO HAS ACONSEGUIT !!!");
+			window.nou_nivell=1 ; // hem de carregar un nou nivell
+			
+			// cal netejar ???? // sumar punts ???
+			ctx.font = "30px Arial";
+			ctx.fillText("Toca per començar",10,centre_y);
+			
 			return ; // JA NO DIBUIXA LA BOLA
 			
 		}
