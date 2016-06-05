@@ -62,7 +62,7 @@ $(document).on('deviceready', function() {
 			img.onload = function(){
 			  ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
 			};
-			img.src = 'img/myImage.png'; // Determinar origen
+			img.src = 'img/esfera.png'; // Determinar origen
 			
 		}
 	
@@ -158,7 +158,7 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		
 		// dibuixo la bola
 		var img = new Image(); 
-		img.src = 'img/myImage.png';
+		img.src = 'img/esfera.png';
 		ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
 		
 		window.darrera_posicio_x = posicio_x_bola ;
