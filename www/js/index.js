@@ -72,20 +72,20 @@ $(document).on('deviceready', function() {
 			
 		}
 		
-		if ( window.nivell == 1 ) {
+		if ( window.nivell == 2 ) {
 			
 			// DIBUIXEM LA PANTALLA INICIAL & BOLA	--> el 2n nivell
 			var nivell = window.nivell ;
 			
-			var posicio_x_bola = 80 ; // hauria de ser en % o proporcional a la pantalla per tablets etc
+			var posicio_x_bola = 40 ; // hauria de ser en % o proporcional a la pantalla per tablets etc
 			var posicio_y_bola = 60 ;
 			
 			//alert( " " + amplada_pantalla_CSS +   " " + alcada_pantalla_CSS +   " " + posicio_x_bola +   " " + posicio_y_bola +   " " + mida_x_bola +   " " + mida_y_bola +   " " + nivell   )
 			
 			var img_fons = new Image();   
-			img_fons.src = 'img/laberint_fons_1.png'; // Determinar origen
+			img_fons.src = 'img/laberint_fons_2.png'; // Determinar origen
 			img_fons.onload = function(){
-		    		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+		    	ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 			};
 			
 			var img = new Image();
@@ -103,7 +103,8 @@ $(document).on('deviceready', function() {
 	
 	document.addEventListener('touchmove', function(e) {
 	
-			if ( window.nou_nivell == 1) { return ; } // mentre aquesta variable sigui 1 NO SEGEUIXO ACCEPTANT QUE EL DIT SEGUEIXI ARROSSEGANT-SE
+			// mentre aquesta variable sigui 1 NO SEGEUIXO ACCEPTANT QUE EL DIT SEGUEIXI ARROSSEGANT-SE
+			if ( window.nou_nivell == 1) { return ; } 
 	
 			var touchobj = e.changedTouches[0] ; // referència al primer punt tocat (pex: el primner dit)
 			startx = parseInt(touchobj.clientX) ; // quina és la posició x en referència al costat esquerra de la pantalla
