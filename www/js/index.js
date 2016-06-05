@@ -8,7 +8,7 @@ $(document).on('deviceready', function() {
      /////////////////////////////////////////////////////////
      
      // REDIMENSIONEM EL CANVAS
-	 var canvas = document.getElementById('canvas');
+     var canvas = document.getElementById('canvas');
      var ctx = canvas.getContext('2d');
      ctx.canvas.width  = window.innerWidth;
      ctx.canvas.height = window.innerHeight;
@@ -187,7 +187,7 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 			
 			if ( window.nivell == 2) 
 			{	
-				var posicio_x_bola = 80 ;  // ??
+				var posicio_x_bola = 40 ;  // ??
 				var posicio_y_bola = 60 ;
 			}
 			
@@ -201,6 +201,9 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 			window.nivell = window.nivell + 1 ; // pex 1 -> 2	
 			alert("HO HAS ACONSEGUIT !!!");
 			window.nou_nivell=1 ; // hem de carregar un nou nivell
+			
+			// netejar pantalla
+			ctx.canvas.width  = window.innerWidth;
 			
 			// cal netejar ???? // sumar punts ???
 			ctx.font = "30px Arial";
