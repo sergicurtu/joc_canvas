@@ -232,17 +232,21 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		{
 		
 			window.nivell = window.nivell + 1 ; // pex 1 -> 2	
-			alert("HO HAS ACONSEGUIT !!!");
+			// alert("HO HAS ACONSEGUIT !!!");
 			window.nou_nivell=1 ; // hem de carregar un nou nivell
 			
 			// netejar pantalla 
 			ctx.canvas.width  = window.innerWidth;
-			
+		
+			var img_NEXT_LEVEL = new Image();
+			img_NEXT_LEVEL.src = 'img/NEXT_LEVEL.png'; // Determinar origen
+		  	ctx.drawImage(img_NEXT_LEVEL,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+		
+			// AMB UNA IMATGE DE FINAL DE NIVELL JA NO CAL NETEJAR
 			// cal netejar ???? // sumar punts ??? // substituir això per una pantalla 
-			var centre_y = window.innerHeight / 2 ;
-			ctx.font = "30px Arial";
-			
-			ctx.fillText("Toca per Continuar",30,centre_y);
+			//var centre_y = window.innerHeight / 2 ;
+			//ctx.font = "30px Arial";
+			//ctx.fillText("Toca per Continuar",30,centre_y);
 			
 			return ; // JA NO DIBUIXA LA BOLA
 			
