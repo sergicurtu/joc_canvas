@@ -127,6 +127,30 @@ $(document).on('deviceready', function() {
 			window.nou_nivell = 0 ; // permetem arrossegar
 			
 		}
+
+		if ( window.nivell == 4 ) {
+			
+			// DIBUIXEM LA PANTALLA INICIAL & BOLA	--> el 2n nivell
+			var nivell = window.nivell ;
+			
+			var posicio_x_bola = 40 ; // hauria de ser en % o proporcional a la pantalla per tablets etc
+			var posicio_y_bola = 60 ;
+			
+			var img_fons = new Image();   
+			img_fons.src = 'img/laberint_fons_4.png'; // Determinar origen
+			img_fons.onload = function(){
+		    	ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+			};
+			
+			var img = new Image();
+			img.onload = function(){
+			  ctx.drawImage(img,posicio_x_bola,posicio_y_bola,mida_x_bola,mida_y_bola);
+			};
+			img.src = 'img/esfera.png'; // Determinar origen
+			
+			window.nou_nivell = 0 ; // permetem arrossegar
+			
+		}
 	
 		
 	});	
@@ -176,6 +200,10 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		   img_fons.src = 'img/laberint_fons_3.png';
 		} 
 		
+		if ( window.nivell == 4 ) 
+		{
+		   img_fons.src = 'img/laberint_fons_4.png';
+		} 		
 		ctx.drawImage(img_fons,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		
 		// LA BOLA - ESFERA - NAU .... 
@@ -232,6 +260,11 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 				var posicio_y_bola = 60 ;
 			}
 			
+			if ( window.nivell == 4) 
+			{	
+				var posicio_x_bola = 40 ;  // ??
+				var posicio_y_bola = 60 ;
+			}			
 			
 		}
 		
@@ -267,9 +300,6 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 		
 		window.darrera_posicio_x = posicio_x_bola ;
 		window.darrera_posicio_y = posicio_y_bola ;
-		
-		
-		
 		
 		
 }
