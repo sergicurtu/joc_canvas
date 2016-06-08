@@ -29,7 +29,7 @@ $(document).on('deviceready', function() {
 	
 	// LA PRIMERA PANTALLA ES LA DE ESPERAR EL TOC
 	var img_NEXT_LEVEL = new Image();
-	img.onload = function(){
+	img_NEXT_LEVEL.onload = function(){
 		ctx.drawImage(img_NEXT_LEVEL,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 	}	
 	img_NEXT_LEVEL.src = 'img/NEXT_LEVEL.png'; // Determinar origen
