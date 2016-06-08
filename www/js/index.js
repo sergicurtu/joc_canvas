@@ -53,6 +53,9 @@ $(document).on('deviceready', function() {
 		
 		if ( window.nou_nivell == 0) { return ; } // tan sols accepta TAPS si s'ha acabat el nivell
 	
+		if ( window.nou_nivell > 4 ) { return ; } // FINAL DE LA PARTIDA
+	
+	
 		if ( window.nivell == 0 ) {
 			
 			// DIBUIXEM LA PANTALLA INICIAL & BOLA	--> el 1r nivell
@@ -283,11 +286,20 @@ function draw(amplada_pantalla_CSS,alcada_pantalla_CSS,posicio_x_bola,posicio_y_
 			img_NEXT_LEVEL.src = 'img/NEXT_LEVEL.png'; // Determinar origen
 		  	ctx.drawImage(img_NEXT_LEVEL,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
 		
-			// AMB UNA IMATGE DE FINAL DE NIVELL JA NO CAL NETEJAR
-			// cal netejar ???? // sumar punts ??? // substituir això per una pantalla 
-			//var centre_y = window.innerHeight / 2 ;
-			//ctx.font = "30px Arial";
-			//ctx.fillText("Toca per Continuar",30,centre_y);
+
+			// FINAL DE PARTIDA 
+			
+			if ( window.nivell > 4 ) 
+			{
+				
+				var img_FINAL_PARTIDA = new Image();
+				img_FINAL_PARTIDA.src = 'img/img_FINAL_PARTIDA.png'; // Determinar origen
+			  	ctx.drawImage(img_FINAL_PARTIDA,0,0,amplada_pantalla_CSS,alcada_pantalla_CSS);
+				
+			}
+			
+
+
 			
 			return ; // JA NO DIBUIXA LA BOLA
 			
