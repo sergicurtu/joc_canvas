@@ -45,10 +45,19 @@
 	<preference name="auto-hide-splash-screen" value="false" /> <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 	<preference name="android-minSdkVersion" value="7" /> <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
 	<preference name="android-installLocation" value="auto" /> <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
-	<preference name="ios-statusbarstyle" value="black-opaque" /> <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
-	<preference name="StatusBarOverlaysWebView" value="false" />
- 	<preference name="StatusBarBackgroundColor" value="#004238" />
- 	
+	
+	<!--
+		<preference name="ios-statusbarstyle" value="black-opaque" />
+		<preference name="StatusBarOverlaysWebView" value="false" />
+		<preference name="StatusBarBackgroundColor" value="#004238" />
+ 	-->
+	
+	<!-- npn : https://github.com/apache/cordova-plugin-statusbar -->
+	<preference name="StatusBarOverlaysWebView" value="true" />
+	<preference name="StatusBarBackgroundColor" value="#000000" />
+	<preference name="StatusBarStyle" value="lightcontent" />
+	
+	
   	<access origin="*"/>
  
 	<!-- 
@@ -69,6 +78,8 @@
 	<!-- AQUESTES VERSIONS JA NO FUNCIONEN A NOVEMBRE 2016 		-->
 	<!--	<gap:plugin name="com.phonegap.plugin.statusbar" />	-->
 	<!-- 	<gap:plugin name="com.adobe.plugins.gaplugin" /> 	-->
+	
+	<gap:plugin name="org.apache.cordova.statusbar" source='npm' />
 	
 	<!-- FastCanvas NO FUNCIONA npm-->
 	<!-- <gap:plugin name="com.adobe.plugins.FastCanvas" source='npm' /> -->
