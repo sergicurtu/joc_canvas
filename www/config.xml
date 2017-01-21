@@ -65,8 +65,10 @@
 	<gap:plugin name="cordova-plugin-inappbrowser" source='npm' />
 	<gap:plugin name="cordova-plugin-x-toast" source='npm' />
 	<gap:plugin name="ionic-plugin-keyboard" source='npm' />
-	<gap:plugin name="com.phonegap.plugin.statusbar" />
-	<gap:plugin name="com.adobe.plugins.gaplugin" /> 
+	
+	<!-- AQUESTES VERSIONS JA NO FUNCIONEN A NOVEMBRE 2016 		-->
+	<!--	<gap:plugin name="com.phonegap.plugin.statusbar" />	-->
+	<!-- 	<gap:plugin name="com.adobe.plugins.gaplugin" /> 	-->
 	
 	<!-- FastCanvas NO FUNCIONA npm-->
 	<!-- <gap:plugin name="com.adobe.plugins.FastCanvas" source='npm' /> -->
